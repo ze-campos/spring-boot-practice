@@ -1,0 +1,11 @@
+- Spring boot
+	- Dependency injection (It's when a class receive the objects that it needs by the constructor method instead of creating) (Do it with container IOC)
+	- life Cycle (Spring Container Starts, bean is instantiated, dependencies are injected, post processors)
+	- Bean (Is a class that the Instantiation is handle by spring) - Component - Repository - Service - RestController - Autowired - configuration - componentScan - ControllerAdvice - ExceptionHandler
+	- exceptions - you can use the annotation ControllerAdvice and ExceptionHandler
+
+	PROS
+	- Dependency Injection (IOC)
+	- autoconfiguration
+	- modules (Boot, DATA, Security, Cloud, Batch, Kafka)
+	- AOP
