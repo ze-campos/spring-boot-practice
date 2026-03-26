@@ -21,26 +21,17 @@ public class CardController {
         return cardService.createNewCard(body);
     }
 
-//    @PutMapping("/{id}")
-//    public Card atualizaCard(@PathVariable String id, @RequestBody CardDto card) {
-//        Card updatedData = null;
-//        for (Card data : posts ){
-//            if (data.getId().equals(id)) {
-//                data.setTitle(card.title());
-//                data.setDescription(card.description());
-//                updatedData = data;
-//            }
-//        }
-//
-//        return  updatedData;
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public String deleteCard(@PathVariable String id) {
-//        posts.removeIf(card -> card.getId().equals(id));
-//
-//        return "Deletado";
-//    }
+    @PutMapping("/{id}")
+    public Card atualizaCard(@PathVariable String id, @RequestBody CardDto card) {
+        return cardService.updateCardById(id, card);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteCard(@PathVariable String id) {
+        cardService.deleteCardById(id);
+
+        return "Deletado";
+    }
 
     @GetMapping("/all")
     public List<Card> getCard() {
