@@ -28,6 +28,14 @@ public class CardService {
         return newCard;
     }
 
+    public Card updateCardById(String id, CardDto input) {
+        return cardRepository.updateCardById(id, input);
+    }
+
+    public void deleteCardById(String id) {
+        cardRepository.deleteCardById(id);
+    }
+
     public List<Card> getAllCards() {
         return cardRepository.getAllCards();
     }

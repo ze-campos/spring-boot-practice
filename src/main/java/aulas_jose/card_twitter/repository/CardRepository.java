@@ -1,5 +1,6 @@
 package aulas_jose.card_twitter.repository;
 
+import aulas_jose.card_twitter.controllers.dto.CardDto;
 import aulas_jose.card_twitter.repository.entity.Card;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,19 @@ public class CardRepository {
         posts.add(card);
 
         return card;
+    }
+
+    public Card updateCardById(String id, CardDto input) {
+        Card updatedData = null;
+        for (Card data : posts ){
+            if (data.getId().equals(id)) {
+                data.setTitle(input.title());
+                data.setDescription(input.description());
+                updatedData = data;
+            }
+        }
+
+        return updatedData;
     }
 
     public void deleteCardById(String id) {
