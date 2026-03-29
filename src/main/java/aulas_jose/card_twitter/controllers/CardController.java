@@ -22,12 +22,12 @@ public class CardController {
     }
 
     @PutMapping("/{id}")
-    public Card atualizaCard(@PathVariable String id, @RequestBody CardDto card) {
+    public Card atualizaCard(@PathVariable Long id, @RequestBody CardDto card) {
         return cardService.updateCardById(id, card);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteCard(@PathVariable String id) {
+    public String deleteCard(@PathVariable Long id) {
         cardService.deleteCardById(id);
 
         return "Deletado";
@@ -39,7 +39,7 @@ public class CardController {
     }
 
     @GetMapping("/{id}")
-    public Card getCardById(@PathVariable String id) {
+    public Card getCardById(@PathVariable Long id) {
        return cardService.getCardById(id);
     }
 }

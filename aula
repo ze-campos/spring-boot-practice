@@ -9,3 +9,29 @@
 	- autoconfiguration
 	- modules (Boot, DATA, Security, Cloud, Batch, Kafka)
 	- AOP
+
+- DB
+    - SQL (Postgre, MYsql, OracleSQL, RDS) X NOSQL(MONGODB, AURORA, )
+    - SQL x NOSQL (SQL -> It's a DB with relations beetwen tables and the data is row and colum, NOSQL -> its a DB with no relations and the data type can be document store, key value and grafos)
+    - Transaction -> When you change something at database do rollback if goes wrong
+    - Indice -> it's a data structure that decriase query times looks like a book indice
+    - ACID -> Atomicity, Consistency, Isolation, Durability
+
+    SQL
+    - Querys
+    - FK - it's used to relation tables, PK is a FK in other tables
+
+    NOSQL
+    - DATA types (Document Store, Key value, Grafos)
+    - Querys
+- Java Persistence Api (JPA)
+    - What is it? -> It's a specification of how work with database in java
+    - Anotations (Entity, Table, Column, Id, OneToOne, OneToMany, Cache, Transient)
+    - Fetch types (Eager -> Brings all data, lazy -> only brings data when access)
+    - JPA implementations -> Hibernate
+
+- Spring Data
+        - What is it? -> Spring module to work with DB, utilizes JPA and hibernate with less boilerplates
+        - diference between jpa -> Java specification for database /hibernate -> implementation/spring DATA -> Spring module that Works with jpa and hibernate
+        - Transaction
+        - Querys (native query, query method, JPQL, Criteria)
