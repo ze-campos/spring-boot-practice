@@ -6,7 +6,6 @@ import aulas_jose.card_twitter.repository.entity.Card;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class CardService {
@@ -19,7 +18,6 @@ public class CardService {
     public Card createNewCard(CardDto input) {
         Card newCard = new Card();
 
-        newCard.setId(UUID.randomUUID().toString());
         newCard.setTitle(input.title());
         newCard.setDescription(input.description());
 
@@ -28,19 +26,24 @@ public class CardService {
         return newCard;
     }
 
-    public Card updateCardById(String id, CardDto input) {
-        return cardRepository.updateCardById(id, input);
+    public Card updateCardById(Long id, CardDto input) {
+        Card data = cardRepository.findById(id).get();
+
+        data.setTitle(input.title());
+        data.setDescription(input.description());
+
+        return cardRepository.save(data);
     }
 
-    public void deleteCardById(String id) {
-        cardRepository.deleteCardById(id);
+    public void deleteCardById(Long id) {
+        cardRepository.deleteById(id);
     }
 
     public List<Card> getAllCards() {
-        return cardRepository.getAllCards();
+        return cardRepository.findAll();
     }
 
-    public Card getCardById(String id) {
-        return cardRepository.getCardById(id);
+    public Card getCardById(Long id) {
+        return cardRepository.findById(id).get();
     }
 }
