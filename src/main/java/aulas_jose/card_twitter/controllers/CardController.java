@@ -11,7 +11,6 @@ import java.util.List;
 @RequestMapping("/cards")
 public class CardController {
     private final CardService cardService;
-    private static final String JOSE = "Te amo";
 
     CardController(CardService cardService) {
         this.cardService = cardService;
